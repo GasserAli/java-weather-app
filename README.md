@@ -8,7 +8,8 @@ This documentation shows the project's architecture, employed technologies, and 
 </p>
 
 <p align="center">
-    <img src="https://github.com/curadProgrammer/WeatherAppGUI-Java/blob/main/Screenshot_15.png?raw=true" align="center">
+    <img src="https://github.com/GasserAli/java-weather-app/blob/master/images%20for%20github%201.png" align="left">
+     <img src="https://github.com/GasserAli/java-weather-app/blob/master/images%20for%20github%203.png" align="center">
 </p>
 
 <h2>Technologies Used</h2>
