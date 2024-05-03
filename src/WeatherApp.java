@@ -26,7 +26,7 @@ public class WeatherApp {
         //build API request URL with location coordinates
         String urlString = "https://api.open-meteo.com/v1/forecast?" +
                 "latitude="+ latitude + "&longitude=" +longitude+
-                "&hourly=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Africa%2FCairo";
+                "&hourly=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Europe%2FMoscow";
 
         try{
             //call api and get response
@@ -81,7 +81,7 @@ public class WeatherApp {
 
             //build the weather json data object that we are going to use in the frontend
             JSONObject weatherData = new JSONObject();
-            weatherData.put("temperature: ",temperature);
+            weatherData.put("temperature:",temperature);
             weatherData.put("weather_condition:", weatherCondition);
             weatherData.put("humidity:",humidity);
             weatherData.put("windspeed:",windspeed);
@@ -108,7 +108,7 @@ public class WeatherApp {
         return 0;
     }
 
-     public static String getCurrentTime(){
+    public static String getCurrentTime(){
         //gets the current time
         LocalDateTime currentDateTime = LocalDateTime.now();
 
@@ -168,7 +168,7 @@ public class WeatherApp {
 
     }
 
-   private static HttpURLConnection fetchApiResponse(String urlString){
+    private static HttpURLConnection fetchApiResponse(String urlString){
         try {
             //attempt to create a connection
             URL url = new URL(urlString);
@@ -185,13 +185,13 @@ public class WeatherApp {
         }catch(IOException e){
             e.printStackTrace();
         }
-        //couldnt make connection
+        //couldn't make connection
         return null;
 
-   }
+    }
 
-   //convert weather code to something readable
-   private static String convertWeatherCode(long weatherCode){
+    //convert weather code to something readable
+    private static String convertWeatherCode(long weatherCode){
         String weatherCondition = "";
         if( weatherCode == 0L ){
             weatherCondition = "Clear";
@@ -203,6 +203,7 @@ public class WeatherApp {
             weatherCondition = "Snow";
         }
         return weatherCondition;
-   }
+    }
+
 
 }
